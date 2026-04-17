@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plus, ArrowRight } from 'lucide-react';
+import { Plus,ArrowRight } from 'lucide-react';
 
 // Single team member row. Uses 'variant' prop (admin/member) for different role badges.
 const MemberRow = ({

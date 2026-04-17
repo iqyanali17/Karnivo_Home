@@ -1,5 +1,5 @@
-import { Dot, Box, Clock, Users } from 'lucide-react';
-import React from 'react';
+import { Dot, Layers, Clock } from 'lucide-react';
+import { FaUsers } from 'react-icons/fa';
 
 // Greeting header component displaying current date, quick stats, and New Booking button.
 const Greeting = () => {
@@ -14,16 +14,16 @@ const Greeting = () => {
         </p>
         <div className="flex flex-wrap gap-0 mb-2">
           <div className="flex items-center py-2 pl-0 pr-3 transition-transform">
-            <Box className="text-blue-600 flex-shrink-0 mr-2 w-5 h-5" />
+            <Layers className="text-[#0A66C2] flex-shrink-0 mr-2 w-5 h-5" />
             <p className="m-0 text-sm font-medium text-gray-700 whitespace-nowrap">2 active plans</p>
           </div>
           <div className="flex items-center py-2 px-3 transition-transform">
-            <Users className="text-blue-600 flex-shrink-0 mr-2 w-5 h-5" />
+            <FaUsers className="text-[#0A66C2] flex-shrink-0 mr-2 w-5 h-5" />
             <p className="m-0 text-sm font-medium text-gray-700 whitespace-nowrap">4 team members</p>
           </div>
           <div className="flex items-center py-2 px-3 transition-transform">
-            <Clock className="text-orange-500 flex-shrink-0 mr-2 w-5 h-5" />
-            <p className="m-0 text-sm font-medium text-orange-500   whitespace-nowrap">3 request pending</p>
+            <Clock className="text-amber-600 flex-shrink-0 mr-2 w-4 h-3.5" />
+            <p className="m-0 text-sm font-medium text-amber-600   whitespace-nowrap">3 request pending</p>
           </div>
         </div>
       </div>

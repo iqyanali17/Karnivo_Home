@@ -1,5 +1,6 @@
 import React from 'react';
-import { Users, Monitor, Mic, MonitorDot, Plus, Circle, Info } from 'lucide-react';
+import { Mic, MonitorDot, Plus, Circle, Info } from 'lucide-react';
+import { FaUsers, FaChalkboard } from 'react-icons/fa';
 
 // Single subscription plan card. Uses 'variant' prop to display standard plans or add-ons.
 const PlanCard = ({ 
@@ -16,9 +17,9 @@ const PlanCard = ({
   const getCreditIcon = (creditType) => {
     switch (creditType) {
       case 'meeting':
-        return <Users className="text-blue-400 w-3 h-3" />;
+        return <FaUsers className="text-blue-400 w-3 h-3" />;
       case 'conference':
-        return <Monitor className="text-blue-400 w-3 h-3" />;
+        return <FaChalkboard className="text-blue-400 w-3 h-3" />;
       case 'auditorium':
         return <Mic className="text-blue-400 w-3 h-3" />;
       case 'hotdesk':

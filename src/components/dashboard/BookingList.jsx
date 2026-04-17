@@ -1,8 +1,8 @@
 import React from 'react';
-import { Clock, CheckCircle, XCircle, Calendar, Users, Monitor, Mic, ArrowRight, InfoIcon } from 'lucide-react';
-
+import { Clock, CheckCircle, XCircle, Calendar, ArrowRight, InfoIcon } from 'lucide-react';
+import { FaUsers, FaMicrophoneAlt, FaChalkboard } from 'react-icons/fa';
 // Single booking row. Uses 'variant' prop (pending/approved/rejected) to apply different styles.
-const BookingListItem = ({ 
+const BookingListItem = ({
   variant = 'pending',
   roomName,
   roomType = 'meeting',
@@ -11,9 +11,9 @@ const BookingListItem = ({
   duration,
   bookingId,
   errorMessage,
-  onViewClick 
+  onViewClick
 }) => {
-  
+
   // Style details for each status variant
   const variantConfig = {
     pending: {
@@ -48,9 +48,9 @@ const BookingListItem = ({
 
   // Icon details for each room type
   const roomIconConfig = {
-    meeting: { icon: <Users className="text-sm" />, pendingColor: 'text-amber-500', approvedColor: 'text-green-600', rejectedColor: 'text-red-400' },
-    conference: { icon: <Monitor className="text-sm" />, pendingColor: 'text-amber-500', approvedColor: 'text-green-600', rejectedColor: 'text-red-400' },
-    auditorium: { icon: <Mic className="text-sm" />, pendingColor: 'text-green-600', approvedColor: 'text-green-600', rejectedColor: 'text-red-400' }
+    meeting: { icon: <FaUsers className="text-sm" />, pendingColor: 'text-amber-500', approvedColor: 'text-green-600', rejectedColor: 'text-red-400' },
+    conference: { icon: <FaChalkboard className="text-sm" />, pendingColor: 'text-amber-500', approvedColor: 'text-green-600', rejectedColor: 'text-red-400' },
+    auditorium: { icon: <FaMicrophoneAlt className="text-sm" />, pendingColor: 'text-green-600', approvedColor: 'text-green-600', rejectedColor: 'text-red-400' }
   };
 
   // Pick the correct styles based on provided props
@@ -65,7 +65,7 @@ const BookingListItem = ({
   };
 
   return (
-    <div className={`flex items-center gap-4 px-5 py-4 ${config.rowBg}`}>
+    <div className={`flex items-center gap-4 px-[10px] py-[6px] ${config.rowBg}`}>
       <div className={`w-10 h-10 ${config.iconBg} rounded-xl flex items-center justify-center flex-shrink-0`}>
         <span className={getIconColor()}>
           {React.cloneElement(roomConfig.icon)}
@@ -82,11 +82,11 @@ const BookingListItem = ({
             {config.badgeText}
           </span>
         </div>
-        
+
         <p className="text-xs text-gray-400 mt-0.5">
           {date} · {time} · {duration}
         </p>
-        
+
         {errorMessage && (
           <p className="text-xs text-red-500 mt-0.5 flex items-center gap-1">
             <InfoIcon className="w-3 h-3 flex-shrink-0" />
@@ -97,9 +97,9 @@ const BookingListItem = ({
 
       <div className="text-right flex-shrink-0">
         <p className="text-xs text-gray-400 font-mono">{bookingId}</p>
-        <a 
-          href="#" 
-          className="text-xs text-blue-600 hover:underline mt-0.5 block font-semibold"
+        <a
+          href="#"
+          className="text-xs text-[#0A66C2] hover:text-[#0A66C2] hover:underline mt-0.5 block font-semibold"
           onClick={(e) => {
             e.preventDefault();
             if (onViewClick) onViewClick();
@@ -177,6 +177,8 @@ const BookingList = () => {
           <BookingListItem
             key={index}
             {...booking}
+            roomName={booking.room}
+            bookingId={booking.id}
             onViewClick={() => console.log(`View booking: ${booking.id}`)}
           />
         ))}

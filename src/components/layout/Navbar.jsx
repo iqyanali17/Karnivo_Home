@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import NavbarItems from './NavbarItems';
-import { House, Users, Box, CirclePlus, Clock, Dot, Bell, ChevronDown, Menu, X } from 'lucide-react';
+import { Home, Users, Layers, PlusCircle, Clock, Dot, Bell, ChevronDown, Menu, X } from 'lucide-react';
 import NavDropDown from './NavDropDown';
-
+import { FaUser } from 'react-icons/fa';
 // Main navigation bar component. Contains the brand logo, navigation links, and the profile dropdown switch.
 const Navbar = ({ navItems = [
-  { label: 'Dashboard', icon: <House size={18} /> },
-  { label: 'Book a Space', icon: <CirclePlus size={18} /> },
+  { label: 'Dashboard', icon: <Home size={18} /> },
+  { label: 'Book a Space', icon: <PlusCircle size={18} /> },
   { label: 'My Requests', icon: <Clock size={18} /> },
-  { label: 'Team', icon: <Users size={18} /> },
-  { label: 'Plans', icon: <Box size={18} /> }
+  { label: 'Team', icon: <FaUser ssize={18} /> },
+  { label: 'Plans', icon: <Layers size={18} /> }
 ] }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

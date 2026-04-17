@@ -14,7 +14,7 @@ const Credits = () => {
       <div className="p-5 bg-white rounded-lg mx-5 mb-2.5 relative">
         <div className="flex justify-between items-center mb-0.25">
           <p className='text-lg font-bold text-gray-700 m-0'>Space Credits — April 2026</p>
-          <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors duration-300 cursor-pointer">View Breakdown</a>
+          <a href="#" className="font-semibold text-[#0A66C2] hover:text-[#0A66C2] transition-colors duration-300 cursor-pointer">view Breakdown</a>
         </div>
         <p className='text-sm text-gray-600 flex items-center m-0'>
           Combined Across 2 active plans 

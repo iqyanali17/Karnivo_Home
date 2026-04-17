@@ -1,5 +1,7 @@
 import React from 'react';
-import { Users, Monitor, Mic, ChevronRight } from 'lucide-react';
+import { Users, Mic, ChevronRight } from 'lucide-react';
+import { FaChalkboardTeacher } from 'react-icons/fa';
+import { FaMicrophoneAlt, FaUsers , FaChalkboard} from 'react-icons/fa';
 
 // Dashboard stat card. Uses 'variant' prop (meeting/conference/auditorium) to apply specific icons, progress bar colors, and text styles.
 const Card = ({ 
@@ -18,23 +20,23 @@ const Card = ({
     switch (variant) {
       case 'conference':
         return {
-          icon: <Monitor className="text-orange-500" />,
+          icon: <FaChalkboardTeacher className="text-amber-500" />,
           iconBg: 'bg-orange-50',
-          progressColor: 'bg-[#FF6B35]',
-          buttonColor: 'text-orange-500',
-          hoverColor: 'hover:text-orange-600'
+          progressColor: 'bg-amber-400',
+          buttonColor: 'text-amber-600',
+          hoverColor: 'hover:text-amber-600'
         };
       case 'auditorium':
         return {
-          icon: <Mic className="text-green-500" />,
+          icon: <FaMicrophoneAlt className="text-green-500" />,
           iconBg: 'bg-green-50',
-          progressColor: 'bg-[#10B981]',
-          buttonColor: 'text-green-500',
+          progressColor: 'bg-green-500',
+          buttonColor: 'text-green-600',
           hoverColor: 'hover:text-green-600'
         };
       default: // meeting
         return {
-          icon: <Users className="text-blue-500" />,
+          icon: <FaUsers className="text-[#0A66C2]" />,
           iconBg: 'bg-blue-50',
           progressColor: 'bg-[#0A66C2]',
           buttonColor: 'text-blue-500',
@@ -47,7 +49,7 @@ const Card = ({
 
   return (
     <div 
-      className="bg-white rounded-lg border border-gray-200 p-4 shadow-sm cursor-pointer hover:border-[#0A66C2] hover:shadow-[0_4px_16px_rgba(10,102,194,0.08)] transition-all duration-200"
+      className="ml-4 bg-white rounded-lg border border-gray-200 p-[20px] w-[98%] max-w-[370px] shadow-sm cursor-pointer hover:border-[#0A66C2] hover:shadow-[0_4px_16px_rgba(10,102,194,0.08)] transition-all duration-200"
       onClick={onClick}
     >
       {/* Header */}
